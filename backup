@@ -1,0 +1,10 @@
+#!/bin/sh
+Help(){
+        echo "Usage: backup file_name"
+        exit 1;
+}
+if [ $# -eq 0 ]
+then
+    Help
+fi
+tar -zcvf "${1}-`date +%Y%m%d%H%M`.tar.gz" $1
