@@ -1,0 +1,11 @@
+#!/bin/sh
+Help(){
+        echo "Usage: diffpaths {path1} {path2}"
+}
+
+if [ $# -ne 2 ]
+then
+        Help
+	exit 1
+fi
+diff -q -r -E -Z -b -w -B $1 $2
