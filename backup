@@ -1,8 +1,11 @@
 #!/bin/sh
+
+# Show a little help to the user, and exit the script with non success status
 Help(){
         echo "Usage: backup file_name"
         exit 1;
 }
+
 if [ $# -eq 0 ]
 then
     Help
