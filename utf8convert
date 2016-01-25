@@ -5,3 +5,9 @@ Help(){
         echo "Usage: utf8convert folder_root/"
         exit 1;
 }
+
+if [ $# -eq 0 ]
+then
+    Help
+fi
+
