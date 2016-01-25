@@ -1,1 +1,7 @@
-//
+#!/bin/sh
+
+# Show a little help to the user, and exit the script with non success status
+Help(){
+        echo "Usage: utf8convert folder_root/"
+        exit 1;
+}
