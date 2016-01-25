@@ -2,7 +2,7 @@
 
 # Show a little help to the user, and exit the script with non success status
 Help(){
-        echo "Usage: utf8convert folder_root/"
+        echo "Usage: utf8convert extension"
         exit 1;
 }
 
@@ -11,3 +11,10 @@ then
     Help
 fi
 
+// under development.
+for f in `find . | grep '\.${1}'`; do
+file_path=`${f%.${1}}`;
+iconv -t ascii "${file_path}.${1}" > "${file_path}.utf8.${1}";
+mv "${file_path}.utf8.${1}" "${file_path}.${1}";
+echo "File [${f}] successful converted.";
+done
