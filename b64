@@ -1,1 +1,6 @@
-#
+#!/bin/sh
+
+# Just decode a string from base64.
+
+echo "$1" | base64 -d
+echo ""
