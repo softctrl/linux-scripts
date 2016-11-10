@@ -1,6 +1,27 @@
 #!/bin/sh
-
 # Just decode a string from base64.
 
-echo "$1" | base64 -d
-echo ""
+Help(){
+        echo "Just encode/decode a string to/from base64.";
+        echo "Usage: b64 [e/d] {text value}";
+        exit 1;
+}
+
+if [ $# -ne 2 ]
+then
+        Help
+fi
+
+case "$1" in
+        e)
+                # Encode
+                echo "\"${2}\" => [$(eval echo "${2}" | base64;)]"
+        ;;
+        d)
+                # Dencode
+                #echo "$2" | base64 -d;
+                echo "[${2}] => \"$(eval echo "${2}" | base64 -d)\"";
+        ;;
+        *)
+                Help;
+esac
