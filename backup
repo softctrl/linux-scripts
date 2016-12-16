@@ -10,4 +10,7 @@ if [ $# -eq 0 ]
 then
     Help
 fi
-tar -zcvf "${1}-`date +%Y%m%d%H%M`.tar.gz" $1
+
+FILE="${1}-`date +%Y%m%d%H%M`.tar.gz"
+
+tar -zcvf $FILE $1 && echo "##-Done [${1}]->[${FILE}]"; 
