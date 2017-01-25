@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Show a little help to the user, and exit the script with non success status
+Help(){
+        echo "Usage: prettyj '{Json content}'"
+        exit 1;
+}
+
+if [ $# -ne 1 ]
+then
+    Help
+fi
+
+echo "---------------------------------------------------"
+echo ${1} | python -m json.tool
+echo "---------------------------------------------------"
